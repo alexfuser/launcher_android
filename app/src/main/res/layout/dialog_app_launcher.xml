@@ -105,13 +105,15 @@
 
         <!-- label at the bottom of the dialog showing how many apps are configured -->
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="bottom|center_horizontal"
-            android:alpha="0.35"
-            android:text="@{viewmodel.appLauncherLabel}"
-            android:textAlignment="center"
-            android:textSize="@dimen/app_launcher_dialog_footer_text_size"
-            tools:text="Apps Configured: 1" />
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center_horizontal"
+                android:alpha="0.35"
+                android:text="@{viewmodel.appLauncherLabel}"
+                android:textAlignment="center"
+                android:textSize="@dimen/app_launcher_dialog_footer_text_size"
+                tools:text="Apps Configured: 1"
+                android:textColor="#757575"
+                tools:ignore="TextContrastCheck" />
     </FrameLayout>
 </layout>

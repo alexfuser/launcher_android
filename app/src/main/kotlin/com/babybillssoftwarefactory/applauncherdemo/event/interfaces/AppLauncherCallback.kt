@@ -24,4 +24,5 @@ interface AppLauncherCallback {
      * @param appInfo AppInfo object for the App card that was selected
      */
     fun onAppClicked(appInfo: AppLauncherViewModel.App.AppInfo)
+
 }

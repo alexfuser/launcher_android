@@ -5,7 +5,6 @@
 
     <!-- ****************************************** PERMISSIONS ****************************************** -->
     <!-- PERMISSION CATEGORY: DANGEROUS (STORAGE group) -->
-    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
     <!-- **************************************    END PERMISSIONS   ************************************** -->
 
     <application
@@ -24,12 +23,25 @@
 
         <!-- ****************************************** ACTIVITIES ****************************************** -->
         <activity android:name=".view.activities.MainActivity"
-                  android:label="@string/dashboard_title">
+                  android:label="@string/dashboard_title"
+                android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
+        <receiver
+                android:name=".view.activities.AdminReceiver"
+                android:description="@string/app_name"
+                android:exported="true"
+                android:label="@string/app_name">
+            <meta-data
+                    android:name="android.app.device_admin"
+                    android:resource="@xml/device_admin_receiver" />
+            <intent-filter>
+                <action android:name="android.app.action.DEVICE_ADMIN_ENABLED" />
+            </intent-filter>
+        </receiver>
         <!-- ****************************************** ACTIVITIES ****************************************** -->
 
 

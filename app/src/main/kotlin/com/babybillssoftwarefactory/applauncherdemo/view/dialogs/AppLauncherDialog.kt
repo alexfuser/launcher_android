@@ -6,6 +6,7 @@ package com.babybillssoftwarefactory.applauncherdemo.view.dialogs
 
 //region import directives
 
+import android.annotation.SuppressLint
 import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
@@ -23,6 +24,7 @@ import com.babybillssoftwarefactory.applauncherdemo.service.AppLauncherFileMonit
 import com.babybillssoftwarefactory.applauncherdemo.util.logging.Logger
 import com.babybillssoftwarefactory.applauncherdemo.view.adapters.AppLauncherAdapter
 import com.babybillssoftwarefactory.applauncherdemo.viewmodel.AppLauncherViewModel
+import java.util.*
 import com.babybillssoftwarefactory.applauncherdemo.AppLauncherDemo.Companion.context as AppContext
 
 //endregion import directives
@@ -147,6 +149,7 @@ class AppLauncherDialog : DialogFragment() {
      * Configures our recycler view
      * @param binding Data binding reference
      */
+    @SuppressLint("NotifyDataSetChanged")
     private fun configureRecyclerView(binding: DialogAppLauncherBinding) {
         try {
             binding.appContainer.apply {
@@ -167,7 +170,7 @@ class AppLauncherDialog : DialogFragment() {
 
                                     // update data set with current collection of apps
                                     (adapter as AppLauncherAdapter).apply {
-                                        apps = it.sortedBy { app -> app.label.toLowerCase() }
+                                        apps = it.sortedBy { app -> app.label.toLowerCase(Locale.ROOT) }
                                         notifyDataSetChanged()
                                     }
                                 } catch (ex: Exception) {

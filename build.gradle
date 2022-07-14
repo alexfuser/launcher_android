@@ -5,37 +5,50 @@ buildscript {
     // dependency versioning info
     ext {
         // kotlin version
-        kotlin_version = '1.3.31'
+        kotlin_version = '1.1.15'
     }
 
     repositories {
         // google's maven repository
         google()
+        mavenCentral()
+        maven {
+            url "https://repo.spring.io/release"
+        }
+        maven {
+            url "https://repository.jboss.org/maven2"
+        }
 
         // https://bintray.com/bintray/jcenter
-        jcenter()
     }
 
     dependencies {
         // gradle plugin
         // ref: https://developer.android.com/studio/build/
-        classpath 'com.android.tools.build:gradle:3.4.1'
+
+        classpath 'com.android.tools.build:gradle:7.2.1'
 
         // kotlin gradle plugin
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
 
         // navigation architecture component - safe args
-        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.1.0-alpha04"
+        classpath "androidx.navigation:navigation-safe-args-gradle-plugin:2.5.0"
     }
 }
 
 allprojects {
     repositories {
         // google's maven repository
+        mavenCentral()
+        maven {
+            url "https://repo.spring.io/release"
+        }
+        maven {
+            url "https://repository.jboss.org/maven2"
+        }
         google()
 
         // https://bintray.com/bintray/jcenter
-        jcenter()
     }
 }
 

@@ -6,6 +6,7 @@ package com.babybillssoftwarefactory.applauncherdemo.event.interfaces
 
 //region import directives
 
+import android.util.Log
 import com.babybillssoftwarefactory.applauncherdemo.util.logging.Logger
 import org.greenrobot.eventbus.EventBus
 
@@ -28,6 +29,7 @@ interface IEventHandler {
         try {
             if (!EventBus.getDefault().isRegistered(this)) {
                 EventBus.getDefault().register(this)
+
             }
         } catch (ex: Exception) {
             Logger.w(ex)
@@ -41,9 +43,11 @@ interface IEventHandler {
         try {
             if (EventBus.getDefault().isRegistered(this)) {
                 EventBus.getDefault().unregister(this)
+
             }
         } catch (ex: Exception) {
             Logger.w(ex)
+
         }
     }
     //endregion interface methods

@@ -20,15 +20,17 @@
             android:focusable="true">
 
         <!-- Used to display the App Launcher dialog -->
+
         <ImageView
                 android:id="@+id/dashboard_icon"
                 android:layout_width="@dimen/dashboard_display_dialog_icon_size"
                 android:layout_height="@dimen/dashboard_display_dialog_icon_size"
-                android:layout_centerInParent="true"
                 android:contentDescription="@string/unknown"
                 android:scaleType="fitCenter"
                 android:layout_marginBottom="@dimen/dashboard_display_dialog_margin_bottom"
-                android:src="@drawable/rocket_launch"/>
+                android:src="@drawable/rocket_launch"
+               
+                android:layout_centerInParent="true" />
 
         <!-- Description of the Launcher -->
         <TextView
@@ -40,9 +42,26 @@
                 android:layout_centerHorizontal="true"
                 android:textAlignment="center"
                 android:textSize="@dimen/dashboard_display_dialog_text_size"
-                android:textColor="@android:color/darker_gray"
+                android:textColor="#A1887F"
                 android:textStyle="bold"
                 android:text="@string/dashboard_display_app_launcher"
-                tools:text="Click to display App Launcher dialog"/>
+                tools:text="Click to display App Launcher dialog" />
+
+        <Button
+                android:text="@string/start_lock_task"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/dashboard_label"
+                android:id="@+id/btStartLockTask" />
+
+        <Button
+                android:text="@string/stop_lock_task"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/btStopLockTask"
+                android:layout_below="@+id/dashboard_label"
+                android:layout_alignParentEnd="true" />
+
     </RelativeLayout>
+    
 </layout>
